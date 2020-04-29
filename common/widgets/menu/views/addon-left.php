@@ -49,7 +49,7 @@ $addonName = StringHelper::toUnderScore($addonName);
             <ul class="nav nav-pills nav-stacked">
                 <?php foreach ($menus as $vo) { ?>
                     <li>
-                        <a href="<?= Url::to(ArrayHelper::merge([$vo['route']], $vo['params'])); ?>">
+                        <a href="<?= Url::to(ArrayHelper::merge([$vo['route']], ($vo['params'] ?? []) )); ?>">
                             <i class="<?= $vo['icon'] ? $vo['icon'] : 'fa fa-puzzle-piece'; ?> rf-i"></i><?= $vo['title']; ?>
                         </a>
                     </li>
